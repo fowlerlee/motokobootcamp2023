@@ -4,6 +4,6 @@
 
 3 . you have assigned a number type of zero to a text type variable
 
-4 . false, everything on the IC is async
+4 . false, everything on the IC is async when public. only internal calls without query modifier specified can be non-async.
 
 5 . 
