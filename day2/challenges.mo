@@ -5,9 +5,11 @@ import Char "mo:base/Char";
 import Debug "mo:base/Debug";
 import Buffer "mo:base/Buffer";
 import Nat "mo:base/Nat";
+import Int "mo:base/Int";
+
 
 actor {
-  public func average_array(array : [Int]) : Int {
+  public func average_array(array : [Int]) : async Int {
     var num : Int = 0;
       for (x in array.vals()){
         num := num + x;
