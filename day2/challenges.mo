@@ -26,10 +26,10 @@ actor {
       return x;    
     };
     
-    public func number_of_words() : async Nat {
+    public func number_of_words(t : Text) : async Nat {
       var n : Nat = 1;
       let txt : Text = "hello world";
-      for (charz in txt.chars()){
+      for (charz in t.chars()){
         if (Text.equal(Char.toText(charz), " ")){
           n := n + 1;
         }
