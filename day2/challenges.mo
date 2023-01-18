@@ -3,6 +3,8 @@ import Iter "mo:base/Iter";
 import Text "mo:base/Text";
 import Char "mo:base/Char";
 import Debug "mo:base/Debug";
+import Buffer "mo:base/Buffer";
+import Nat "mo:base/Nat";
 
 actor {
   public func average_array(array : [Int]) : Int {
@@ -45,6 +47,18 @@ actor {
       };
       return n;
     };
+    
+    public query func find_duplicates(a : [Nat]) : async [Nat] {
+    var buffer = Buffer.Buffer<Nat>(1);
+    for(i in Iter.range(0, a.size()-1 )) {
+        for(j in Iter.range(i+1, a.size()-1)){
+          if(a[i] == a[j] and not Buffer.contains(buffer, a[i], Nat.equal)){
+              buffer.add(a[j]);
+          };
+        };
+    };
+    return Buffer.toArray(buffer);
+};
   
  }
 
