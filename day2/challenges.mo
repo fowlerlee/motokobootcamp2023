@@ -58,7 +58,11 @@ actor {
         };
     };
     return Buffer.toArray(buffer);
-};
+    };
+    
+    public func convert_to_binary(n : Nat) : async ?Text {
+      return Text.decodeUtf8(Text.encodeUtf8(Nat.toText(n)));
+    }
   
  }
 
