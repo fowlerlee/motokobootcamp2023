@@ -1,6 +1,8 @@
 import Array "mo:base/Array";
 import Iter "mo:base/Iter";
 import Text "mo:base/Text";
+import Char "mo:base/Char";
+import Debug "mo:base/Debug";
 
 actor {
   func average_array(array : [Int]) : Int {
@@ -19,5 +21,23 @@ actor {
       };
       return x;    
     };
+    
+     type Pattern = Text.Pattern;
+  
+  public func count_character(t : Text, c : Char) : async Nat {
+      var n : Nat = 0;
+      let p : Pattern = #char(c);
+      for(letter in t.chars()) {
+        if(Text.contains(Char.toText(letter), p)){
+          n := n+1;
+        }
+      };
+      return n;
+    };
   
  }
+
+
+
+
+
