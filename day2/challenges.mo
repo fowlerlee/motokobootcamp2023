@@ -5,7 +5,7 @@ import Char "mo:base/Char";
 import Debug "mo:base/Debug";
 
 actor {
-  func average_array(array : [Int]) : Int {
+  public func average_array(array : [Int]) : Int {
     var num : Int = 0;
       for (x in array.vals()){
         num := num + x;
@@ -22,9 +22,20 @@ actor {
       return x;    
     };
     
+    public func number_of_words() : async Nat {
+      var n : Nat = 1;
+      let txt : Text = "hello world";
+      for (charz in txt.chars()){
+        if (Text.equal(Char.toText(charz), " ")){
+          n := n + 1;
+        }
+      };
+      return n;
+    };
+    
      type Pattern = Text.Pattern;
   
-  public func count_character(t : Text, c : Char) : async Nat {
+    public func count_character(t : Text, c : Char) : async Nat {
       var n : Nat = 0;
       let p : Pattern = #char(c);
       for(letter in t.chars()) {
