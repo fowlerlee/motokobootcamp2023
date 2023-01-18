@@ -11,4 +11,13 @@ actor {
       return num / 2 ;
   };
   
+    public func name(arg : Nat) : async Nat {
+      var x : Nat = 1;
+      let i = Iter.range(x, arg);
+      for(num in i) {
+        x := x * num;
+      };
+      return x;    
+    };
+  
  }
