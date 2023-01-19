@@ -20,4 +20,12 @@ let buffer = Buffer.Buffer<Int>(3);
         let odds = Array.filter<Nat>(array, func x = x % 2 != 0);
         odds;
     };
+
+    // public func drop<T>(xs : [T], n : Nat) : async [T] {
+    //     let buf = Buffer.Buffer<T>(3);
+
+    //     return Buffer.toArray();
+    // };
+
+
 };
