@@ -1,4 +1,4 @@
-#Links to great videos and learning content
+# Links to great videos and learning content
 
 Rust best practices -> https://www.youtube.com/watch?v=36L33S_DYHY 
 Build rust dapps -> Community conversations | overview of building a dapp in Rust 
